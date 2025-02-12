@@ -119,7 +119,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="flex h-screen w-full flex-col items-center justify-center gap-4 bg-primary p-4 text-secondary">
+  <div class="flex h-screen w-full flex-col items-center justify-center gap-4 bg-primary p-4 text-white">
     <div class="my-4 text-xl font-bold">Таньд баяр хүгрэе!</div>
     <div class="text-center text-lg">
       Та {{ correctAnswers }} асуултанд зөв хариулсанаар шалгалтанд амжилттай тэнцэж энэ сайхан залуутай болзоонд явах эрх хожлоо
