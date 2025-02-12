@@ -13,7 +13,9 @@ const question = questions.value[index]
 // Add a ref to store the user's selected answer
 
 const nextQuestion = () => {
-  navigateTo(`/questions/${Number(route.params.id) + 1}`)
+  if (questions.value[index].selected) {
+    navigateTo(`/questions/${Number(route.params.id) + 1}`)
+  }
 }
 const previous = () => {
   if (Number(route.params.id) > 1) {
@@ -41,16 +43,18 @@ const photoBorder = (item: string) => {
 const textBorder = (item: string) => {
   if (questions.value[index].selected) {
     if (item === question.correct_answer) {
-      return ' bg-green-300'
+      return ' bg-green-400'
     } else if (item === questions.value[index].selected) {
-      return 'bg-red-300'
+      return 'bg-red-400'
     }
   }
   return ''
 }
 
 const finish = () => {
+  if (questions.value[index].selected) {
     navigateTo('/congrats')
+  }
 }
 </script>
 <template>
@@ -78,7 +82,9 @@ const finish = () => {
         </div>
       </div>
     </div>
-    <div v-if="questions.length !== question.id" @click="nextQuestion" class="w-full"><Button class="w-full">Next</Button></div>
-    <div v-else @click="finish"><Button class="w-full">Next</Button></div>
+    <div v-if="questions.length !== question.id" @click="nextQuestion" class="w-full">
+      <Button :disabled="!questions[index].selected" class="w-full">Дараагийн асуулт</Button>
+    </div>
+    <div v-else @click="finish"><Button :disabled="!questions[index].selected" class="w-full">Дуусгах</Button></div>
   </div>
 </template>
