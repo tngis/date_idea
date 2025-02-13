@@ -24,8 +24,6 @@ export default defineNuxtConfig({
       description: 'Tengis & Chimgees private website',
       start_url: '/',
       display: 'standalone',
-      theme_color: '#167fc5',
-      background_color: '#FFFFFF',
       icons: [
         {
           src: '/icon.png',
