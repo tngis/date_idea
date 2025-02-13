@@ -55,7 +55,11 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: 'T&C',
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      script: [
+        {
+          children: 'window.global = window;',
+        },
+      ],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
   },
