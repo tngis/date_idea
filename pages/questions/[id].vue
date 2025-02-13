@@ -58,7 +58,7 @@ const finish = () => {
 }
 </script>
 <template>
-  <div class="flex h-screen w-full flex-col justify-between p-4">
+  <div class="mx-auto flex h-screen w-full max-w-xl flex-col justify-between p-4">
     <div class="mt-8 flex items-center justify-between text-xl">
       <Icon @click="previous" class="h-8 w-8" icon="tabler:arrow-left" />
       <div>Асуулт {{ question.id }}</div>
@@ -66,7 +66,7 @@ const finish = () => {
     </div>
     <div class="flex flex-col gap-4">
       <div class="flex justify-center">{{ question.text }}</div>
-      <div v-if="question.answers.type === 'photo'" class="grid grid-cols-2 gap-2">
+      <div v-if="question.answers.type === 'photo'" class="grid grid-cols-2 gap-2 lg:gap-4">
         <div @click="check(item)" v-for="item in question.answers.items" :key="item" :class="['overflow-hidden rounded-lg', photoBorder(item)]">
           <img :src="item" alt="" />
         </div>
@@ -82,9 +82,9 @@ const finish = () => {
         </div>
       </div>
     </div>
-    <div v-if="questions.length !== question.id" @click="nextQuestion" class="w-full">
+    <div v-if="questions.length !== question.id" @click="nextQuestion" class="w-full py-4">
       <Button :disabled="!questions[index].selected" class="w-full">Дараагийн асуулт</Button>
     </div>
-    <div v-else @click="finish"><Button :disabled="!questions[index].selected" class="w-full">Дуусгах</Button></div>
+    <div v-else @click="finish"><Button :disabled="!questions[index].selected" class="my-4 w-full">Дуусгах</Button></div>
   </div>
 </template>

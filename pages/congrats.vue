@@ -119,19 +119,21 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="flex h-screen w-full flex-col items-center justify-center gap-4 bg-primary p-4 text-white">
-    <div class="my-4 text-xl font-bold">Таньд баяр хүгрэе!</div>
-    <div class="text-center text-lg">
-      Та {{ correctAnswers }} асуултанд зөв хариулсанаар шалгалтанд амжилттай тэнцэж энэ сайхан залуутай болзоонд явах эрх хожлоо
+  <div class="w-full bg-primary p-4 text-white">
+    <div class="mx-auto flex h-screen w-full max-w-xl flex-col items-center justify-center gap-4">
+      <div class="my-4 text-xl font-bold">Таньд баяр хүгрэе!</div>
+      <div class="text-center text-lg">
+        Та {{ correctAnswers }} асуултанд зөв хариулсанаар шалгалтанд амжилттай тэнцэж энэ сайхан залуутай болзоонд явах эрх хожлоо
+      </div>
+      <div class="overflow-hidden rounded-xl">
+        <img src="/IMG_4979.jpg" alt="" />
+      </div>
+      <div>
+        <div class="flex gap-2 font-semibold"><Icon icon="tabler:map-pin" class="h-5 w-5 text-white" /> <span>2 сарын 14 ний өглөө 8 цагт</span></div>
+        <div class="flex gap-2 font-semibold"><Icon icon="tabler:calendar-week" class="h-5 w-5 text-white" /><span>Тэнгисийн гэрийн гадаа</span></div>
+      </div>
+      <div>Та нэмэлтээр шагнал хожсон байна.</div>
+      <Button @click="navigateTo('/price')" class="border-none text-lg text-primary" variant="outline" size="lg">Хүлээж авах</Button>
     </div>
-    <div class="overflow-hidden rounded-xl">
-      <img src="/IMG_4979.jpg" alt="" />
-    </div>
-    <div>
-      <div class="flex gap-2 font-semibold"><Icon icon="tabler:map-pin" class="h-5 w-5 text-white" /> <span>2 сарын 14 ний өглөө 8 цагт</span></div>
-      <div class="flex gap-2 font-semibold"><Icon icon="tabler:calendar-week" class="h-5 w-5 text-white" /><span>Тэнгисийн гэрийн гадаа</span></div>
-    </div>
-    <div>Та нэмэлтээр шагнал хожсон байна.</div>
-    <Button @click="navigateTo('/price')" class="border-none text-lg text-primary" variant="outline" size="lg">Хүлээж авах</Button>
   </div>
 </template>
