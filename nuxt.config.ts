@@ -1,5 +1,16 @@
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
 export default defineNuxtConfig({
   ssr: false,
+  vite: {
+    plugins: [
+      nodePolyfills({
+        globals: {
+          Buffer: true,
+          process: true,
+        },
+      }),
+    ],
+  },
 
   runtimeConfig: {
     public: {
@@ -26,12 +37,12 @@ export default defineNuxtConfig({
       display: 'standalone',
       icons: [
         {
-          src: '/icon.png',
+          src: '/icon-192x192.png',
           sizes: '192x192',
           type: 'image/png',
         },
         {
-          src: '/icon.png',
+          src: '/icon-512x512.png',
           sizes: '512x512',
           type: 'image/png',
         },
