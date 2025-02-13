@@ -13,6 +13,7 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: 'T&C',
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
   },
