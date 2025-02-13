@@ -8,6 +8,39 @@ export default defineNuxtConfig({
     },
   },
 
+  pwa: {
+    workbox: {
+      globPatterns: [],
+      skipWaiting: true,
+      clientsClaim: true,
+      runtimeCaching: undefined,
+    },
+    devOptions: {
+      enabled: false,
+    },
+    manifest: {
+      name: 'T&C',
+      short_name: 'T&C',
+      description: 'Tengis & Chimgees private website',
+      start_url: '/',
+      display: 'standalone',
+      theme_color: '#167fc5',
+      background_color: '#FFFFFF',
+      icons: [
+        {
+          src: '/icon.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: '/icon.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ],
+    },
+  },
+
   app: {
     head: {
       charset: 'utf-8',
@@ -18,7 +51,16 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
   },
 
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@pinia/nuxt', '@nuxtjs/google-fonts', '@nuxtjs/color-mode', 'nuxt-viewport', '@nuxtjs/device'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    'shadcn-nuxt',
+    '@pinia/nuxt',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/color-mode',
+    'nuxt-viewport',
+    '@nuxtjs/device',
+    '@vite-pwa/nuxt',
+  ],
 
   css: ['@/assets/css/main.scss', 'nprogress/nprogress.css', 'vue-json-pretty/lib/styles.css'],
 
